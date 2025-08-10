@@ -38,7 +38,7 @@ def ask_book_genre(message: Message):
         bot.send_message(message.chat.id, "❌ Avval janr qo‘shing.")
         return
 
-    markup = get_genre_buttons(genres)  # default keyboard bo'lishi kerak
+    markup = get_genre_buttons(genres)
     msg = bot.send_message(message.chat.id, "📚 Janrni tanlang:", reply_markup=markup)
     bot.register_next_step_handler(msg, ask_book_description)
 
